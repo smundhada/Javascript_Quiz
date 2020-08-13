@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript Fundamental Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="container">
+                <div class="Welcome justify-content-md-center">
+                    <h10>Javascript Fundamental Quiz</h10>
+                    <p class="game-rules"> 
+                     The rules of the quiz are you will be given 3 minutes to <br>
+                     complete 10 javascript fundamental questions. When a question <br>
+                     is answered correctly you will be awarded 10 points. A wrong <br>
+                     answer will deduct 15 sec from the timer. At the end you will <br>
+                     save your score with the intial of your name and see how others <br>
+                     performed on this same quiz. To begin click the start button.
+                    </p>
+                    <button id="start-quiz">Start</button>
+                </div>
+                <div class="javaQuiz justify-content-md-center">
+                  <div class="col-12 col-md-10 col-lg-10">
+                      <h1 class="time"></h1>
+                      <h1 id="question">hi</h1>
+                      <div class="row col-12 col-md-10 col-lg-8">
+                        <div class="col-12 col-md-6 col-lg-12">
+                            <h1 id="answerone"></h1>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-12">
+                            <h1 id="answertwo"></h1>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-12">
+                            <h1 id="answerthree"></h1>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-12">
+                            <h1 id="answerfour"></h1>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="End justify-content-md-center"></div>
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>

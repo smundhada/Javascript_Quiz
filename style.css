@@ -1,0 +1,53 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    min-height: 100%
+}
+h10 {
+    font-size: 30px;
+    font-family: 'Nunito', sans-serif;
+    color: black;
+    margin:auto;
+    vertical-align:middle;
+    font-weight: 100;
+    background-color: rgb(202, 182, 116);
+    
+ }
+
+.Welcome{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom : 40px;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+ .game-rules{
+    font-size: 15px;
+    font-family: 'Nunito', sans-serif;
+    color: black;
+    margin:auto;
+    vertical-align:middle;
+    font-weight: 100;
+ }
+
+
+.javaQuiz{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom : 40px;
+    margin-top: 50px;
+    display: none;
+}
+
+.End{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom : 40px;
+    margin-top: 50px;
+    display: none;
+}
