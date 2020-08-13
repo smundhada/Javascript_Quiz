@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript Fundamental Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+</head>
+<body>
+        <div class="container">
+                <div class="Welcome col-12 col-md-12 col-lg-12">
+                    <h10>Javascript Fundamental Quiz</h10>
+                    <p class="game-rules"> 
+                    The rules of the quiz are you will have 90 seconds to complete five javascript <br> 
+                    fundamental questions. When a problem answered correctly, you will be awarded <br> 
+                    20 points. An incorrect answer will deduct 15 sec from the timer. In the end, you will <br>
+                    store your score with the initial of your name and see how others performed on this<br>
+                        same quiz. To begin, click the start button!
+                    </p>
+                    <button id="start-quiz">Start</button>
+                </div>
+
+                <div class="javaQuiz justify-content-md-center">
+                        
+                  <div class="col-12 col-md-12 col-lg-12">
+                        <h1 class="time"></h1>
+                      <h1 id="question">hi</h1>
+                      <div class="row col-12 col-md-12 col-lg-8">
+                        <div class="col-12 col-md-12 col-lg-12">
+                            <h1 class = "answer-options" id="answerone"></h1>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-12">
+                            <h1 class = "answer-options" id="answertwo"></h1>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-12">
+                            <h1 class = "answer-options" id="answerthree"></h1>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-12">
+                            <h1 class = "answer-options" id="answerfour"></h1>
+                        </div>
+                      </div>
+                      <img class = answer-accurracy><img>
+                  </div>
+                </div>
+
+                <div class="End col-12 col-md-12 col-lg-12">
+                    <h1 class = "highscore col-12 col-md-12 col-lg-3"></h1>
+                    <input class = "col-12 col-md-12 col-lg-3" type="text" placeholder = "Initial of Name" id="intials" />    
+                    <button class = "col-12 col-md-12 col-lg-3" id="submit-score">Submit</button>        
+                </div>
+
+                <div class="highscoreboard justify-content-md-center col-12 col-md-12 col-lg-12">
+                        <ul class = "highscoreList col-12 col-md-12 col-lg-3">
+
+                        </ul>
+                        <button class = "col-12 col-md-12 col-lg-3" id="clear-board">Clear Scoreboard</button>        
+                        <button class = "col-12 col-md-12 col-lg-3" id="retake">Retake Quiz</button>        
+
+                </div>
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>

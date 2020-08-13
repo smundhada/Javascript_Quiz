@@ -6,8 +6,16 @@ var answeroneEl = document.getElementById("answerone");
 var answertwoEl = document.getElementById("answertwo");
 var answerthreeEl = document.getElementById("answerthree");
 var answerfourEl = document.getElementById("answerfour");
+var answerAccurracyEl = document.querySelector(".answer-accurracy");
 var timeEl = document.querySelector(".time");
 var endEl = document.querySelector(".End");
+var highscoreEl = document.querySelector(".highscore");
+var userInput = document.querySelector("#intials");
+var submitScoreEl = document.getElementById("submit-score");
+var highscoreboardEl = document.querySelector(".highscoreboard");
+var highscoreListEl = document.querySelector(".highscoreList");
+var clearcoreboardEl = document.getElementById("clear-board");
+var retakeEl = document.getElementById("retake");
 
 var questionObj = {
     '1' : {
@@ -52,12 +60,20 @@ var questionObj = {
     }
 };
 
+var userScore = []; 
+var currentScore = 0;
 var quesNum = 1;
 
 startQuizEl.addEventListener("click", function() {
     setTime();
     WelcomeEl.setAttribute("style", "display: none;");
     javaQuizEl.setAttribute("style", "display: block;");
+    var userScoreCheck = JSON.parse(localStorage.getItem("userScore"));
+
+    // If todos were retrieved from localStorage, update the todos array to it
+    if (userScoreCheck !== null) {
+        userScore = userScoreCheck;
+    }
     displayQues();
 });
 
@@ -69,19 +85,23 @@ function displayQues(){
         answerthreeEl.textContent = questionObj[quesNum]['ans3'];
         answerfourEl.textContent = questionObj[quesNum]['ans4'];    
     }else{
-        endEl.textContent = "End of Quiz";
         javaQuizEl.setAttribute("style", "display: none;");
+        highscoreEl.textContent = "You scored: " + currentScore;
         endEl.setAttribute("style", "display: block;");
+        secondsLeft = 0;
     }
 }
 
 answeroneEl.addEventListener("click", function() {
     if (questionObj[quesNum]['ansCor'] === answeroneEl.innerHTML){
-        alert("CORRECT");
+        answerAccurracyEl.setAttribute("src", "images/correct.png");
+        answerAccurracyEl.setAttribute("style", "display: block; max-width: 20%;");
+        currentScore = currentScore + 20;
         quesNum++;
         displayQues();
     } else{
-        alert("INCORRECT");
+        answerAccurracyEl.setAttribute("src", "images/wrong.png");
+        answerAccurracyEl.setAttribute("style", "display: block;");
         secondsLeft = secondsLeft - 15;
     }
     
@@ -89,11 +109,14 @@ answeroneEl.addEventListener("click", function() {
 
 answertwoEl.addEventListener("click", function() {
     if (questionObj[quesNum]['ansCor'] === answertwoEl.innerHTML){
-        alert("CORRECT");
+        answerAccurracyEl.setAttribute("src", "images/correct.png");
+        answerAccurracyEl.setAttribute("style", "display: block; max-width: 20%;");
+        currentScore = currentScore + 20;
         quesNum++;
         displayQues();
     } else{
-        alert("INCORRECT");
+        answerAccurracyEl.setAttribute("src", "images/wrong.png");
+        answerAccurracyEl.setAttribute("style", "display: block;");
         secondsLeft = secondsLeft - 15;
     }
     
@@ -101,11 +124,14 @@ answertwoEl.addEventListener("click", function() {
 
 answerthreeEl.addEventListener("click", function() {
     if (questionObj[quesNum]['ansCor'] === answerthreeEl.innerHTML){
-        alert("CORRECT");
+        answerAccurracyEl.setAttribute("src", "images/correct.png");
+        answerAccurracyEl.setAttribute("style", "display: block; max-width: 20%;");
+        currentScore = currentScore + 20;
         quesNum++;
         displayQues();
     } else{
-        alert("INCORRECT");
+        answerAccurracyEl.setAttribute("src", "images/wrong.png");
+        answerAccurracyEl.setAttribute("style", "display: block;");
         secondsLeft = secondsLeft - 15;
     }
     
@@ -113,31 +139,69 @@ answerthreeEl.addEventListener("click", function() {
 
 answerfourEl.addEventListener("click", function() {
     if (questionObj[quesNum]['ansCor'] === answerfourEl.innerHTML){
-        alert("CORRECT");
+        answerAccurracyEl.setAttribute("src", "images/correct.png");
+        answerAccurracyEl.setAttribute("style", "display: block; max-width: 20%;");
+        currentScore = currentScore + 20;
         quesNum++;
         displayQues();
     } else{
-        alert("INCORRECT");
+        answerAccurracyEl.setAttribute("src", "images/wrong.png");
+        answerAccurracyEl.setAttribute("style", "display: block; ");
         secondsLeft = secondsLeft - 15;
     }
     
 });
 
-var secondsLeft = 90;
+var secondsLeft = 91;
 function setTime() {
     var timerInterval = setInterval(function() {
       secondsLeft--;
-      timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
+      timeEl.textContent = secondsLeft;
   
       if(secondsLeft <= 0) {
         clearInterval(timerInterval);
-        alert("TIME UP");
-        endEl.textContent = "End of Quiz";
         javaQuizEl.setAttribute("style", "display: none;");
+        highscoreEl.textContent = "You scored: " + currentScore;
         endEl.setAttribute("style", "display: block;");
       }
   
     }, 1000);
 }
 
+function storeUserScore(){
+    localStorage.setItem("userScore", JSON.stringify(userScore));
+    highscore();
+}
+
+submitScoreEl.addEventListener("click", function() {
+
+    var indexRepeat = "";
+    for (var i = 0; i < userScore.length; i++){
+        if(userScore[i][0].includes(userInput.value.trim())){
+            indexRepeat = i; 
+        }
+    }
+    if (indexRepeat !== ""){
+        userScore[indexRepeat][1] = currentScore;
+    }else{
+        userScore.push([userInput.value.trim(), currentScore])
+    }
+    storeUserScore();
+});
+
+function highscore(){
+    endEl.setAttribute("style", "display: none;");
+    highscoreboardEl.setAttribute("style", "display: block;");
+    for (var i = 0; i < userScore.length; i++){
+        var tag = document.createElement("li");
+        tag.textContent = userScore[i][0] + " - " + userScore[i][1];
+        tag.setAttribute("style", "font-size: 20px; font-family: 'Lora', serif;")
+        highscoreListEl.appendChild(tag);
+    }
+}
+
+clearcoreboardEl.addEventListener("click", function() { 
+    window.localStorage.clear();
+    highscore();
+});
 
