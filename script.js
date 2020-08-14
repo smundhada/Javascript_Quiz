@@ -152,11 +152,11 @@ answerfourEl.addEventListener("click", function() {
     
 });
 
-var secondsLeft = 91;
+var secondsLeft = 90;
 function setTime() {
     var timerInterval = setInterval(function() {
+        timeEl.textContent = secondsLeft;
       secondsLeft--;
-      timeEl.textContent = secondsLeft;
   
       if(secondsLeft <= 0) {
         clearInterval(timerInterval);
@@ -202,6 +202,11 @@ function highscore(){
 
 clearcoreboardEl.addEventListener("click", function() { 
     window.localStorage.clear();
+    userScore = [];
+    highscoreListEl.innerHTML = "";
     highscore();
 });
 
+retakeEl.addEventListener("click", function() { 
+    location.reload();
+});

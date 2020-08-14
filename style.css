@@ -142,7 +142,6 @@ h10 {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     line-height: 1;
-  
     padding: 1em 2em;
     border-color: #D4AF37;
     float: left
@@ -167,7 +166,8 @@ h10 {
     color: black;
     vertical-align:middle;
     font-weight: 100;
-    padding-bottom: 15px;
+    padding-bottom: 35px;
+    padding-top: 70px;
 }
 
 .highscoreboard{
@@ -185,7 +185,7 @@ h10 {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     line-height: 1;
-  
+    margin-right: 10px;
     padding: 1em 2em;
     border-color: #D4AF37;
     float: left
@@ -204,16 +204,20 @@ h10 {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     line-height: 1;
-  
+    margin-right: 10px;
     padding: 1em 2em;
     border-color: #D4AF37;
     float: left
 }
 
-#retake{
+#retake:hover{
     background: #D4AF37;
     background-color: #D4AF37;
     border-color: black;
+}
+
+.highscoreList{
+    padding-top: 50px;
 }
 
 @media only screen and (min-width: 415px) and (max-width: 768px) {
@@ -405,7 +409,7 @@ h10 {
         font-family: 'Montserrat', sans-serif;
         text-transform: uppercase;
         line-height: 1;
-      
+        margin-right: 10px;
         padding: 1em 2em;
         border-color: #D4AF37;
         float: left
@@ -424,7 +428,7 @@ h10 {
         font-family: 'Montserrat', sans-serif;
         text-transform: uppercase;
         line-height: 1;
-      
+        margin-top: 15px;
         padding: 1em 2em;
         border-color: #D4AF37;
         float: left
@@ -434,6 +438,10 @@ h10 {
         background: #D4AF37;
         background-color: #D4AF37;
         border-color: black;
+    }
+
+    .highscoreList{
+        padding-top: 50px;
     }
 }
 
@@ -621,6 +629,7 @@ h10 {
         margin-top: 50px;
         display: none;
         padding : 70px;
+        padding-bottom: 120px;
     }
     
     #clear-board{
@@ -640,6 +649,7 @@ h10 {
         background: #D4AF37;
         background-color: #D4AF37;
         border-color: black;
+        margin-right: 10px;
     }
     
     #retake{
@@ -649,7 +659,7 @@ h10 {
         font-family: 'Montserrat', sans-serif;
         text-transform: uppercase;
         line-height: 1;
-      
+        margin-top : 20px;
         padding: 1em 2em;
         border-color: #D4AF37;
         float: left
@@ -659,6 +669,10 @@ h10 {
         background: #D4AF37;
         background-color: #D4AF37;
         border-color: black;
+    }
+
+    .highscoreList{
+        padding-top: 50px;
     }
 
 }
