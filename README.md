@@ -8,7 +8,7 @@ the user will put in their initial to save their score in their local
 storage. The user will then get to see other users scores to compare. 
 The user can also clear out the scoreboard or retake it again. This website 
 is responsive so the user can take the quiz on any digital devices without losing 
-any features. 
+any features. URL to the site : https://smundhada.github.io/Javascript_Quiz/
 
 ![alt text](/images/quiz1.png)
 ![alt text](/images/quiz2.png)
@@ -17,4 +17,4 @@ any features.
 ![alt text](/images/quiz5.png)
 
 
-url for the site : https://smundhada.github.io/Javascript_Quiz/
+
