@@ -154,10 +154,10 @@ answerfourEl.addEventListener("click", function() {
 
 var secondsLeft = 90;
 function setTime() {
-    var timerInterval = setInterval(function() {
-        timeEl.textContent = secondsLeft;
+    timeEl.textContent = secondsLeft;
+    var timerInterval = setInterval(function() { 
       secondsLeft--;
-  
+      timeEl.textContent = secondsLeft;
       if(secondsLeft <= 0) {
         clearInterval(timerInterval);
         javaQuizEl.setAttribute("style", "display: none;");
